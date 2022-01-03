@@ -13,6 +13,11 @@ class MunicipioController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+    public function __construct()
+    {
+        $this->middleware('can:municipios');
+    }
+
     public function index()
     {
         $municipios = Municipio::orderBy('nombre', 'asc')->get();

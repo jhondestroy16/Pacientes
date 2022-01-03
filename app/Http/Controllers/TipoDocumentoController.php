@@ -12,6 +12,11 @@ class TipoDocumentoController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+    public function __construct()
+    {
+        $this->middleware('can:documentos');
+    }
+
     public function index()
     {
         $tipoDocumentos = TipoDocumento::orderBy('nombre', 'asc')->get();

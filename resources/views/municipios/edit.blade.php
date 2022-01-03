@@ -1,9 +1,9 @@
 @extends('layouts.layout')
 
-@section('titulo', 'Editar departamento')
+@section('titulo', 'Editar municipio')
 
 @section('content')
-    <h2 class="texto-blanco pt-5 pb-3">Editar departamento</h2>
+    <h2 class="texto-blanco pt-5 pb-3">Editar municipio</h2>
     @if ($errors->any())
 
         <div class="alert alert-danger">

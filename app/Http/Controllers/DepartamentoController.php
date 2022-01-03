@@ -13,6 +13,11 @@ class DepartamentoController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+    public function __construct()
+    {
+        $this->middleware('can:departamentos');
+    }
+
     public function index()
     {
         $departamentos = Departamento::orderBy('nombre', 'asc')->get();

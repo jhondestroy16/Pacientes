@@ -12,6 +12,11 @@ class GeneroController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+    public function __construct()
+    {
+        $this->middleware('can:generos');
+    }
+
     public function index()
     {
         $generos = Genero::orderBy('nombre', 'asc')->get();

@@ -1,6 +1,6 @@
 @extends('layouts.layout')
 
-@section('titulo', 'Mascota')
+@section('titulo', 'Municipio')
 @section('content')
     <div class="content">
         <div class="container-fluid">
@@ -8,7 +8,7 @@
                 <div class="col-md-12 mt-5">
                     <div class="card">
                         <div class="card-header card-header-primary">
-                            <div class="card-title">Mascota</div>
+                            <div class="card-title">Municipios</div>
                             <p class="card-category">Vista detallada de <b>{{ $municipio->nombre }} </b>
                             </p>
                         </div>

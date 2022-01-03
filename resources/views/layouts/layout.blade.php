@@ -24,61 +24,76 @@
             </button>
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" id="dropServicios" role="button"
-                            data-bs-toggle="dropdown" aria-expanded="false">
-                            Departamentos
-                        </a>
-                        <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                            <li><a class="dropdown-item" href="{{ route('departamentos.index') }}">Listar</a></li>
-                            <li><a class="dropdown-item" href="{{ route('departamentos.create') }}">Registrar
-                                    departamento</a></li>
-                        </ul>
-                    </li>
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" id="dropServicios" role="button"
-                            data-bs-toggle="dropdown" aria-expanded="false">
-                            Municipios
-                        </a>
-                        <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                            <li><a class="dropdown-item" href="{{ route('municipios.index') }}">Listar</a></li>
-                            <li><a class="dropdown-item" href="{{ route('municipios.create') }}">Registrar
-                                    municipios</a></li>
-                        </ul>
-                    </li>
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" id="dropServicios" role="button"
-                            data-bs-toggle="dropdown" aria-expanded="false">
-                            Tipo de documento
-                        </a>
-                        <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                            <li><a class="dropdown-item" href="{{ route('documentos.index') }}">Listar</a></li>
-                            <li><a class="dropdown-item" href="{{ route('documentos.create') }}">Registrar
-                                    tipo de documento</a></li>
-                        </ul>
-                    </li>
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" id="dropServicios" role="button"
-                            data-bs-toggle="dropdown" aria-expanded="false">
-                            Generos
-                        </a>
-                        <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                            <li><a class="dropdown-item" href="{{ route('generos.index') }}">Listar</a></li>
-                            <li><a class="dropdown-item" href="{{ route('generos.create') }}">Registrar
-                                    genero</a></li>
-                        </ul>
-                    </li>
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" id="dropServicios" role="button"
-                            data-bs-toggle="dropdown" aria-expanded="false">
-                            Pacientes
-                        </a>
-                        <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                            <li><a class="dropdown-item" href="{{ route('pacientes.index') }}">Listar</a></li>
-                            <li><a class="dropdown-item" href="{{ route('pacientes.create') }}">Registrar
-                                    paciente</a></li>
-                        </ul>
-                    </li>
+                    @can('departamentos')
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="dropServicios" role="button"
+                                data-bs-toggle="dropdown" aria-expanded="false">
+                                Departamentos
+                            </a>
+                            <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                                <li><a class="dropdown-item" href="{{ route('departamentos.index') }}">Listar</a></li>
+                                <li><hr class="dropdown-divider"></li>
+                                <li><a class="dropdown-item" href="{{ route('departamentos.create') }}">Registrar
+                                        departamento</a></li>
+                            </ul>
+                        </li>
+                    @endcan
+                    @can('municipios')
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="dropServicios" role="button"
+                                data-bs-toggle="dropdown" aria-expanded="false">
+                                Municipios
+                            </a>
+                            <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                                <li><a class="dropdown-item" href="{{ route('municipios.index') }}">Listar</a></li>
+                                <li><hr class="dropdown-divider"></li>
+                                <li><a class="dropdown-item" href="{{ route('municipios.create') }}">Registrar
+                                        municipios</a></li>
+                            </ul>
+                        </li>
+                    @endcan
+                    @can('documentos')
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="dropServicios" role="button"
+                                data-bs-toggle="dropdown" aria-expanded="false">
+                                Tipo de documento
+                            </a>
+                            <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                                <li><a class="dropdown-item" href="{{ route('documentos.index') }}">Listar</a></li>
+                                <li><hr class="dropdown-divider"></li>
+                                <li><a class="dropdown-item" href="{{ route('documentos.create') }}">Registrar
+                                        tipo de documento</a></li>
+                            </ul>
+                        </li>
+                    @endcan
+                    @can('generos')
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="dropServicios" role="button"
+                                data-bs-toggle="dropdown" aria-expanded="false">
+                                Generos
+                            </a>
+                            <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                                <li><a class="dropdown-item" href="{{ route('generos.index') }}">Listar</a></li>
+                                <li><hr class="dropdown-divider"></li>
+                                <li><a class="dropdown-item" href="{{ route('generos.create') }}">Registrar
+                                        genero</a></li>
+                            </ul>
+                        </li>
+                    @endcan
+                    @can('pacientes')
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="dropServicios" role="button"
+                                data-bs-toggle="dropdown" aria-expanded="false">
+                                Pacientes
+                            </a>
+                            <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                                <li><a class="dropdown-item" href="{{ route('pacientes.index') }}">Listar</a></li>
+                                <li><hr class="dropdown-divider"></li>
+                                <li><a class="dropdown-item" href="{{ route('pacientes.create') }}">Registrar
+                                        paciente</a></li>
+                            </ul>
+                        </li>
+                    @endcan
                 </ul>
                 <ul class="navbar-nav ms-auto">
                     <!-- Authentication Links -->
@@ -103,7 +118,7 @@
 
                             <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
                                 <a class="dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault();
-                                                         document.getElementById('logout-form').submit();">
+                                                                         document.getElementById('logout-form').submit();">
                                     {{ __('Logout') }}
                                 </a>
 

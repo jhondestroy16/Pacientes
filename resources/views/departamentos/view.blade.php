@@ -35,7 +35,7 @@
                                     <div class="card-body">
                                         <p class="card-text">
                                         <div class="author">
-                                            <h5 class="title mx-3 text-center"><b>municipios</b></h5>
+                                            <h5 class="title mx-3 text-center"><b>Municipios</b></h5>
                                             <p class="description">
                                                 @foreach ($municipios as $municipio)
                                                     <tr>
@@ -49,7 +49,6 @@
                                 </div>
                             </div>
                             <!--end card user 2-->
-
                         </div>
                     </div>
                 </div>
